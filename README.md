@@ -1,7 +1,7 @@
 
 # Snake RL 🐍
 
-This repository provides an implementation of the classic Snake game using Python and applies **reinforcement learning (RL)** to train an agent to play the game autonomously. The project uses **Q-learning** and **Deep Q Networks (DQNs)** to teach the snake agent how to maximize its score by eating food while avoiding collisions.
+This repository provides an implementation of the classic Snake game using Python and applies **reinforcement learning (RL)** to train an agent to play the game autonomously. The project uses **Q-learning** to teach the snake agent how to maximize its score by eating food while avoiding collisions.
 
 ## Overview
 The project consists of:
@@ -28,7 +28,7 @@ The project consists of:
 
 To install all dependencies, you can use:
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt (To be added)
 ```
 
 ### Installation
@@ -60,7 +60,7 @@ pip install -r requirements.txt
 
 To simply play the game manually, you can run:
 ```bash
-python game.py
+python3 snake_game.py
 ```
 
 ## Reinforcement Learning Training
@@ -69,14 +69,7 @@ python game.py
 Q-learning is used as a simple method to train the snake agent. The algorithm utilizes a table to store values for state-action pairs.
 To train the agent with Q-learning:
 ```bash
-python train_qlearning.py
-```
-
-### Deep Q Network (DQN)
-For more complex environments where the state-action space is too large for a table, a DQN is used. It leverages a neural network to approximate Q-values for actions based on observed states.
-To train the agent with DQN:
-```bash
-python train_dqn.py
+python3 train.py
 ```
 
 ### Configuration
@@ -89,12 +82,9 @@ You can adjust various parameters for the training by modifying the configuratio
 
 ```
 .
-├── game.py                  # Main game code (for manual play)
 ├── snake.py                 # Snake class (handles game logic)
-├── train_qlearning.py       # Q-learning training script
-├── train_dqn.py             # DQN training script
-├── models/                  # Directory for saved models
-├── utils/                   # Helper functions and utilities
+├── snake_game.py            # Main game code (for manual play)
+├── train.py                 # Q-learning training script
 ├── README.md                # Project documentation
 └── requirements.txt         # Python dependencies
 ```
@@ -102,7 +92,7 @@ You can adjust various parameters for the training by modifying the configuratio
 ## Visualization
 You can visualize the performance of the trained model by running:
 ```bash
-python visualize.py
+python3 train.py --display (To be added)
 ```
 This script will load the trained model and render the game to show the agent’s performance.
 
