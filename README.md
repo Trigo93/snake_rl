@@ -70,7 +70,7 @@ python3 train.py
 ![Training progress](results/training_progress.png)
 - With the provided tuning, convergence is reached after roughly 2000 episodes
 - Video of a performance after convergence is available [here](results/last_game.mp4)
-- The final q_table of a 2000 iteration training is provided in the results/ folder
+- The final q_table of a 5000 iteration training is provided in the results/ folder
 
 
 ## Game Configuration
@@ -111,8 +111,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [ ] Implement various RL algorithms (DQN, etc.)
 - [ ] Add better training visualization and progress tracking
-- [ ] Implement different reward strategies to improve snake path planning
-- [ ] Implement a better state representation - especially of the snake body (this might require a Deep Learning approximation of the Q function)
+- [ ] Implement different reward strategies to improve snake path planning and survival as its length grows.
+- [ ] Implement a better state representation:
+  - The snake full body could be added for less own body failure cases
+  - The danger bitfield could be increased to more than the immediate neighbour cells to better anticipate blockage scenarios (such as dead-end)
 - [ ] Add configuration file for easy parameter tuning
 - [ ] Create comprehensive documentation for RL implementation
 - [ ] Add performance comparison between different algorithms
