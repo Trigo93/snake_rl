@@ -1,4 +1,4 @@
-"""! @file snake_ai.py
+"""! @file train.py
 @brief Implementation of a Snake game AI using Q-learning.
 
 This module implements an AI agent that learns to play the Snake game using Q-learning,
