@@ -70,6 +70,7 @@ python3 train.py
 ![Training progress](results/training_progress.png)
 - With the provided tuning, convergence is reached after roughly 2000 episodes
 - Video of a performance after convergence is available [here](results/last_game.mp4)
+- The final q_table of a 2000 iteration training is provided in the results/ folder
 
 
 ## Game Configuration
