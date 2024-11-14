@@ -1,115 +1,110 @@
+# Snake Reinforcement Learning 🐍
 
-# Snake RL 🐍
-
-This repository provides an implementation of the classic Snake game using Python and applies **reinforcement learning (RL)** to train an agent to play the game autonomously. The project uses **Q-learning** to teach the snake agent how to maximize its score by eating food while avoiding collisions.
+A Python implementation of the classic Snake game with reinforcement learning capabilities. This project combines a traditional Snake game implementation with a reinforcement learning environment, allowing AI agents to learn optimal gameplay strategies.
 
 ## Overview
-The project consists of:
-1. A basic **Snake game environment** built with Python.
-2. A **reinforcement learning model** for training the snake agent to learn optimal moves.
-3. Code for training, testing, and visualizing the trained agent's performance.
+
+This project consists of two main components:
+1. A classic Snake game implementation using Pygame
+2. A reinforcement learning environment for training AI agents
 
 ## Features
-- **Classic Snake Game**: An implementation of the Snake game with adjustable game settings.
-- **Reinforcement Learning Algorithms**:
-  - Basic **Q-Learning** for tabular-based learning.
-  - **Deep Q Networks (DQNs)** using neural networks for more complex state spaces.
-- **Visualization**: Observe the agent playing the game during and after training.
 
-## Getting Started
+- 🎮 Fully playable Snake game with keyboard controls
+- 🤖 Reinforcement learning environment with customizable parameters
+- 📊 Score tracking and performance metrics
+- 🎯 Configurable game settings (speed, grid size, etc.)
+- 🔄 State management for AI training
+- 🎨 Visual rendering for both human play and AI training
 
-### Prerequisites
-- **Python 3.7+**
-- Required libraries:
-  - `numpy`
-  - `torch` (for Deep Q Networks)
-  - `pygame` (for game rendering)
-  - `matplotlib` (optional, for visualizations)
+## Installation
 
-To install all dependencies, you can use:
 ```bash
-pip install -r requirements.txt (To be added)
+# Clone the repository
+git clone https://github.com/Trigo93/snake_rl.git
+
+# Navigate to project directory
+cd snake_rl
+
+# Install required packages
+pip3 install -r requirements.txt
 ```
-
-### Installation
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/Trigo93/snake_rl.git
-   cd snake_rl
-   ```
-
-2. **Set Up the Virtual Environment (optional)**
-   It is recommended to use a virtual environment to manage dependencies.
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-   ```
-
-3. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Game Rules
-- The snake moves within a bounded area.
-- The goal is to eat food that appears at random locations.
-- Each time the snake eats food, its length increases by one segment.
-- The game ends if the snake collides with the screen border or with its own body.
-
-## How to Run the Game
-
-To simply play the game manually, you can run:
-```bash
-python3 snake_game.py
-```
-
-## Reinforcement Learning Training
-
-### Q-Learning
-Q-learning is used as a simple method to train the snake agent. The algorithm utilizes a table to store values for state-action pairs.
-To train the agent with Q-learning:
-```bash
-python3 train.py
-```
-
-### Configuration
-You can adjust various parameters for the training by modifying the configuration in each training file, such as:
-- Learning rate
-- Discount factor (gamma)
-- Exploration rate (epsilon)
 
 ## Project Structure
 
 ```
-.
-├── snake.py                 # Snake class (handles game logic)
-├── snake_game.py            # Main game code (for manual play)
-├── train.py                 # Q-learning training script
-├── README.md                # Project documentation
-└── requirements.txt         # Python dependencies
+snake_rl/
+├── snake.py          # Core Snake game mechanics
+├── snake_game.py     # Pygame visualization and controls
+├── train.py          # Run RL algorithm  
+└── requirements.txt  # Project dependencies
 ```
 
-## Visualization
-You can visualize the performance of the trained model by running:
+## Usage
+
+### Playing the Game
+
+To play the Snake game manually:
+
 ```bash
-python3 train.py --display (To be added)
+python3 snake_game.py
 ```
-This script will load the trained model and render the game to show the agent’s performance.
 
-## Future Improvements
-Some potential areas for enhancement:
-- Implement **Double DQN** or **Dueling DQN** for improved training stability.
-- Add more complex reward functions to improve the agent’s strategic decision-making.
-- Explore advanced RL algorithms like **A3C** or **PPO** for better performance.
+Controls:
+- ⬆️ Up Arrow: Move Up
+- ⬇️ Down Arrow: Move Down
+- ⬅️ Left Arrow: Move Left
+- ➡️ Right Arrow: Move Right
+- Q: Quit game
+- C: Restart after game over
+
+### Training an AI Agent
+
+[Coming Soon]
+
+## Game Configuration
+
+The game can be configured through various parameters in `snake.py`:
+
+```python
+SCREEN_WIDTH = 400    # Width of game screen in pixels
+SCREEN_HEIGHT = 300   # Height of game screen in pixels
+SNAKE_BLOCK = 10      # Size of each snake/food block in pixels
+SNAKE_SPEED = 15      # Game update frequency (moves per second)
+```
 
 ## Contributing
-Contributions are welcome! If you would like to contribute, please open a pull request or create an issue.
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-- Inspired by the classic Snake game.
-- Reinforcement Learning concepts based on standard Q-Learning and DQN implementations.
+## Author
 
-Enjoy the game and happy learning! 🚀
+**Tristan Mallet** - [Github](https://github.com/Trigo93)
+
+## Acknowledgments
+
+- Thanks to Pygame for providing the game visualization framework
+- Special thanks to the reinforcement learning community for inspiration and resources
+
+## Future Improvements
+
+- [ ] Implement various RL algorithms (DQN, etc.)
+- [ ] Add better training visualization and progress tracking
+- [ ] Implement different reward strategies (especially a better representation of the snake body)
+- [ ] Add configuration file for easy parameter tuning
+- [ ] Create comprehensive documentation for RL implementation
+- [ ] Add performance comparison between different algorithms
+
+---
+
+For questions or suggestions, please open an issue on the GitHub repository.
