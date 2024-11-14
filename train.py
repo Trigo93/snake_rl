@@ -1,4 +1,4 @@
-"""! @file train.py
+"""! @file snake_ai.py
 @brief Implementation of a Snake game AI using Q-learning.
 
 This module implements an AI agent that learns to play the Snake game using Q-learning,
@@ -37,7 +37,6 @@ class SnakeAI(snake.Snake):
                      learning_rate=0.001,      #!< Rate at which the agent learns from new experiences
                      discount_factor=0.99,      #!< Weight given to future rewards vs immediate rewards
                      exploration_rate=1.0,      #!< Initial probability of taking random actions
-                     min_exploration_rate=0.01, #!< Minimum exploration rate
                      exploration_decay=0.997,   #!< Rate at which exploration decreases
                      food_reward=150,          #!< Reward for collecting food
                      death_penalty=-150,       #!< Penalty for dying
@@ -46,7 +45,6 @@ class SnakeAI(snake.Snake):
             self.learning_rate = learning_rate
             self.discount_factor = discount_factor
             self.exploration_rate = exploration_rate
-            self.min_exploration_rate = min_exploration_rate
             self.exploration_decay = exploration_decay
             self.food_reward = food_reward
             self.death_penalty = death_penalty
@@ -294,10 +292,7 @@ class SnakeAI(snake.Snake):
                 print(f"Avg Score (last 10) = {avg_score:.1f}")
 
             # Update exploration rate
-            self.algo_settings.exploration_rate = max(
-                self.algo_settings.min_exploration_rate,
-                self.algo_settings.exploration_rate *
-                self.algo_settings.exploration_decay)
+            self.algo_settings.exploration_rate *= self.algo_settings.exploration_decay
         
         # Save final episode video
         if frames:
