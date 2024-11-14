@@ -1,6 +1,6 @@
 # Snake Reinforcement Learning 🐍
 
-A Python implementation of the classic Snake game with reinforcement learning capabilities. This project combines a traditional Snake game implementation with a reinforcement learning environment, allowing AI agents to learn optimal gameplay strategies.
+A Python implementation of the classic Snake game with reinforcement learning capabilities. This project combines a traditional Snake game implementation with a reinforcement learning environment, allowing AI agents to learn optimal gameplay strategies. This project does not use existing models or implementation nor import other RL libraries. Everything is demonstrated from scratch.
 
 ## Overview
 
@@ -60,7 +60,17 @@ Controls:
 
 ### Training an AI Agent
 
-[Coming Soon]
+```bash
+python3 train.py
+```
+
+### Results of RL algorithm
+
+- Training progress over episode:
+![Training progress](results/training_progress.png)
+- With the provided tuning, convergence is reached after roughly 2000 episodes
+- Video of a performance after convergence is available [here](results/last_game.mp4)
+
 
 ## Game Configuration
 
@@ -100,7 +110,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [ ] Implement various RL algorithms (DQN, etc.)
 - [ ] Add better training visualization and progress tracking
-- [ ] Implement different reward strategies (especially a better representation of the snake body)
+- [ ] Implement different reward strategies to improve snake path planning
+- [ ] Implement a better state representation - especially of the snake body (this might require a Deep Learning approximation of the Q function)
 - [ ] Add configuration file for easy parameter tuning
 - [ ] Create comprehensive documentation for RL implementation
 - [ ] Add performance comparison between different algorithms
